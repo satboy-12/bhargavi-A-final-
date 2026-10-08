@@ -1,11 +1,15 @@
 import React from "react";
 import { motion, type Variants } from "motion/react";
-import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Github, Linkedin, Mail, MapPin, FileText } from "lucide-react";
 import { PORTFOLIO_DATA } from "../data/portfolio";
 
 const clientPortrait = "/images/bhargavi_portrait.png";
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenResume?: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   const { personal } = PORTFOLIO_DATA;
 
   const containerVariants: Variants = {
@@ -163,6 +167,18 @@ export const Hero: React.FC = () => {
                 <span>GET IN TOUCH</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#F2C6A0]" />
               </a>
+
+              {/* Tertiary: RESUME (Border with champagne accent) */}
+              {onOpenResume && (
+                <button
+                  onClick={onOpenResume}
+                  className="inline-flex items-center gap-2 px-5 py-3.5 bg-transparent border border-[#F2C6A0]/60 hover:bg-[#F2C6A0]/10 hover:border-[#F2C6A0] text-[#FFFFFF] font-mono-tech text-xs uppercase tracking-wider font-semibold transition-all duration-150 cursor-pointer"
+                  title="View official resume"
+                >
+                  <FileText className="w-3.5 h-3.5 text-[#F2C6A0]" />
+                  <span>RESUME</span>
+                </button>
+              )}
 
               {/* Social Channels (White icons, subtle Wisteria borders) */}
               <div className="flex items-center gap-2 pl-1">

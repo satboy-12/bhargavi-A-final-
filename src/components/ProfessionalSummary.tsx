@@ -8,22 +8,22 @@ export const ProfessionalSummary: React.FC = () => {
       num: "01",
       icon: Layers,
       title: "Full Stack Web Architecture",
-      desc: "Engineering responsive web systems with React, TypeScript, and modern styling tools. Delivering clean component hierarchies, state management, and high-performance user journeys.",
-      tags: ["+REACT", "+TYPESCRIPT", "+TAILWIND CSS", "+VITE"],
+      desc: "Engineering responsive web systems with React.js, Next.js, and modern styling tools. Delivering clean component hierarchies, state management, Supabase authentication, and high-performance user journeys.",
+      tags: ["+REACT.JS", "+NEXT.JS", "+SUPABASE", "+TAILWIND CSS"],
     },
     {
       num: "02",
       icon: Smartphone,
       title: "Mobile ERP & Enterprise Solutions",
-      desc: "Constructing production Android applications for commerce and inventory operations. Designed the BS Rocks Creations ERP with live point-of-sale invoicing, SKU tracking, and thermal billing.",
-      tags: ["+ANDROID", "+SQLITE", "+POS BILLING", "+INVENTORY"],
+      desc: "Constructing production Android applications using Kotlin, MVVM architecture, and Jetpack Compose. Designed the BS Rocks Creations ERP with 8 modules, 11 Room SQLite entities, and PDF generation.",
+      tags: ["+KOTLIN", "+JETPACK COMPOSE", "+ROOM SQLITE", "+MVVM"],
     },
     {
       num: "03",
       icon: Workflow,
       title: "Workflow Automation & Cloud Pipelines",
-      desc: "Automating repetitive business processes through Google Apps Script, REST APIs, and automated triggers. Connecting external web forms to structured spreadsheets with zero manual latency.",
-      tags: ["+APPS SCRIPT", "+WEBHOOKS", "+SHEETS API", "+ETL"],
+      desc: "Automating repetitive business processes through Make.com, Google Sheets, webhooks, and automated triggers. Connecting external forms to structured data pipelines with zero manual latency.",
+      tags: ["+MAKE.COM", "+AUTOMATION", "+GOOGLE SHEETS", "+REST APIS"],
     },
   ];
 
@@ -92,15 +92,10 @@ export const ProfessionalSummary: React.FC = () => {
 
           <div className="lg:col-span-7 space-y-4 text-sm sm:text-base text-[#FFFFFF]/90 leading-relaxed font-normal">
             <p>
-              <strong className="text-[#D9A0C8] font-semibold">Bhargavi A</strong> is a Full Stack Developer
-              dedicated to creating scalable digital platforms, modern web interfaces, and purpose-built enterprise
-              applications. Her engineering approach couples strict TypeScript typing and responsive component design with
-              robust backend APIs and automated data pipelines.
+              <strong className="text-[#D9A0C8] font-semibold">Bhargavi A</strong> is a Full Stack Developer and final-year B.E. Computer Science (AI &amp; ML) student with hands-on experience in React.js, Next.js, Node.js, Supabase, and Kotlin.
             </p>
             <p>
-              With practical experience ranging from children's educational web software (Kidspire) to high-throughput
-              point-of-sale ERP Android systems (BS Rocks Creations) and event-driven spreadsheet automation, she bridges
-              user interface precision with operational data fidelity.
+              During her App &amp; Website Development internship at BS Rocks Creations, she built and delivered three production systems: Kidspire (youth activity booking platform), Lumen (event booking platform), and a native Android ERP and billing app with 8 modules and 11 Room entities. Experienced in authentication, database design, payment integration, and workflow automation.
             </p>
           </div>
         </motion.div>

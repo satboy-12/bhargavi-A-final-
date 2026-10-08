@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, FileText } from "lucide-react";
 import { PORTFOLIO_DATA } from "../data/portfolio";
 
 interface NavbarProps {
   activeSection: string;
+  onOpenResume?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
+export const Navbar: React.FC<NavbarProps> = ({ activeSection, onOpenResume }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -88,8 +89,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               })}
             </nav>
 
-            {/* RIGHT: CONTACT ↗ */}
-            <div className="hidden sm:flex items-center gap-4">
+            {/* RIGHT: RESUME + CONTACT ↗ */}
+            <div className="hidden sm:flex items-center gap-3">
+              {onOpenResume && (
+                <button
+                  onClick={onOpenResume}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono-tech uppercase font-medium text-[#FFFFFF] hover:text-[#D9A0C8] border border-[#BC96E6]/40 hover:border-[#D9A0C8] bg-transparent transition-all duration-150 tracking-wider cursor-pointer"
+                  title="View official resume"
+                >
+                  <FileText className="w-3.5 h-3.5 text-[#F2C6A0]" />
+                  <span>RESUME</span>
+                </button>
+              )}
+
               <a
                 href="#contact"
                 className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono-tech uppercase font-semibold text-[#210B2C] bg-[#D9A0C8] hover:bg-[#D9A0C8]/90 transition-all duration-150 tracking-wider shadow-sm"
@@ -153,7 +165,20 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 })}
               </nav>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col gap-2">
+                {onOpenResume && (
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenResume();
+                    }}
+                    className="flex items-center justify-center gap-2 w-full py-2.5 bg-transparent border border-[#BC96E6]/40 hover:border-[#D9A0C8] text-[#FFFFFF] hover:text-[#D9A0C8] font-mono-tech text-xs uppercase font-semibold tracking-wider transition-colors cursor-pointer"
+                  >
+                    <FileText className="w-4 h-4 text-[#F2C6A0]" />
+                    <span>VIEW RESUME</span>
+                  </button>
+                )}
+
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}

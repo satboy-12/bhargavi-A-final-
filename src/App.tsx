@@ -9,10 +9,12 @@ import { Experience } from "./components/Experience";
 import { Education } from "./components/Education";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { ResumeModal } from "./components/ResumeModal";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>("overview");
   const [introFinished, setIntroFinished] = useState<boolean>(false);
+  const [isResumeOpen, setIsResumeOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const sections = ["overview", "summary", "projects", "skills", "experience", "education", "contact"];
@@ -45,11 +47,14 @@ export default function App() {
       )}
 
       {/* Top Fixed Editorial Navigation */}
-      <Navbar activeSection={activeSection} />
+      <Navbar
+        activeSection={activeSection}
+        onOpenResume={() => setIsResumeOpen(true)}
+      />
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        <Hero />
+        <Hero onOpenResume={() => setIsResumeOpen(true)} />
         <ProfessionalSummary />
         <Projects />
         <Skills />
@@ -67,6 +72,12 @@ export default function App() {
 
       {/* Editorial Footer */}
       <Footer />
+
+      {/* Official Curriculum Vitae / Resume Viewer Modal */}
+      <ResumeModal
+        isOpen={isResumeOpen}
+        onClose={() => setIsResumeOpen(false)}
+      />
     </div>
   );
 }
