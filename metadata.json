@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Bhargavi Portfolio",
+  "description": "A high-performance, editorial-style portfolio website for Bhargavi A. built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

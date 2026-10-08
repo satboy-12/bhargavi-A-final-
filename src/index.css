@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-purple: #210B2C;
+  --color-wisteria: #BC96E6;
+  --color-muted-rose: #D9A0C8;
+  --color-warm-champagne: #F2C6A0;
+
+  --color-bg-base: #210B2C;
+  --color-bg-secondary: #210B2C;
+  --color-bg-card: #210B2C;
+  --color-text-main: #FFFFFF;
+  --color-text-secondary: #BC96E6;
+  --color-text-accent: #D9A0C8;
+  --color-border-subtle: #BC96E6;
+
+  --font-display: "Syne", "Archivo Black", "Anton", sans-serif;
+  --font-bebas: "Bebas Neue", "Anton", sans-serif;
+  --font-archivo: "Archivo Black", "Anton", sans-serif;
+  --font-body: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #210B2C;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Custom editorial styles */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-bebas {
+  font-family: var(--font-bebas);
+}
+
+.font-archivo {
+  font-family: var(--font-archivo);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+/* Editorial subtle borders */
+.border-editorial {
+  border-color: rgba(188, 150, 230, 0.25);
+}
+
+/* Focus outline for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #D9A0C8;
+  outline-offset: 3px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #210B2C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(188, 150, 230, 0.35);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D9A0C8;
+}
+
+/* Portrait styling specification */
+.bhargavi-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+  mix-blend-mode: normal;
+  transform: none;
+}
